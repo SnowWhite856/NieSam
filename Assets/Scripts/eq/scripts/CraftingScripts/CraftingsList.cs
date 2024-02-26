@@ -1,12 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Xml;
+using System.Xml.Linq;
+using System.Linq;
 
 public class CraftingsList : MonoBehaviour
 {
-    public List<string> item1 = new List<string>(new[] { "item2", "item3" });
-    public List<string> item2 = new List<string>(new[] { "item1", "item3" });
-    public List<string> item3 = new List<string>(new[] { "item1", "item2" });
+    public string path = "Assets/Resources/saveFiles/craftings.xml";
 
-    public List<string> allItemsToCraft = new List<string>(new[] {"item1","item2","item3"});
+    private void Start()
+    {
+        XDocument doc = XDocument.Load(path);
+
+        XElement item2Element = doc.Descendants("items").First();
+        //XElement item2Element = doc.Descendants("item2").First();
+
+        foreach (XElement node in item2Element.Elements())
+        {
+            Debug.Log(node.Attribute("name").Value);
+        }
+    }
 }
