@@ -1,0 +1,17 @@
+#hp-bar .unity-progress-bar__background{
+	background-color: rgb(112, 12, 12);
+	border-radius: 5px;
+}
+
+#hp-bar .unity-progress-bar__progress{
+	background-color: rgb(200, 12, 12)
+}
+
+#mp-bar .unity-progress-bar__background{
+	background-color: rgb(7, 63, 112);
+	border-radius: 5px;
+}
+
+#mp-bar .unity-progress-bar__progress{
+	background-color: rgb(12, 93, 200)
+}
