@@ -1,3 +1,19 @@
+#LeftPanel .unity-tab-view__header-container {
+	display: none;
+}
+
+#LeftPanel .unity-tab-view__content-container {
+	height: 100%;
+}
+
 .unity-tab{
-    visibility: collapsed;
+	height: 100%;
+}
+
+.unity-tab__content-container{
+	height: 100%;
+}
+
+#Equipment, #Craft{
+	height: 100%;
 }

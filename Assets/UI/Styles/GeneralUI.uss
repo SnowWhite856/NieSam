@@ -15,3 +15,8 @@
 #mp-bar .unity-progress-bar__progress{
 	background-color: rgb(12, 93, 200)
 }
+
+TemplateContainer{
+	height: 80%;
+
+}
