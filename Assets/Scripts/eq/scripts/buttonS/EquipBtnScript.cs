@@ -44,6 +44,7 @@ public class EquipBtnScript : MonoBehaviour
                 FindObjectOfType<EqScipt>().item.Remove(toEquip);
                 WaponSlot.text = toEquip.GetComponent<itemsClass>().name;
                 FindObjectOfType<PlayerStats>().TakeOnItem(toEquip,"wapon");
+                FindObjectOfType<EqScipt>().setWapon();
                 break;
 
             case "wapon2":

@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class PlayerMovment : MonoBehaviour
 {
-    public bool canMove = true;
+   // public bool canMove = true;
     public float xRotation = 0;
     public float yRotation = 0;
     
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        canMove = true;
+        //canMove = true;
     }
 
     
@@ -20,14 +20,14 @@ public class PlayerMovment : MonoBehaviour
     void FixedUpdate()
     {
         
-        if (!canMove) return;
+        //if (!canMove) return;
         //Debug.Log(canMove);
         //var player = FindObjectOfType<PlayerMovment>();
         var direction = Vector3.zero;
 
         if (Input.GetKey(KeyCode.W))
         {
-            direction += gameObject.transform.forward * 8;
+            direction += gameObject.transform.forward *20;
         }
         else if (Input.GetKey(KeyCode.S))
         {

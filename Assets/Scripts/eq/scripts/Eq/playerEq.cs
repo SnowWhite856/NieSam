@@ -38,7 +38,7 @@ public class playerEq : MonoBehaviour
         {
             if (EqOnOff) //1 naciœniêcie
             {
-                gameObject.GetComponent<PlayerMovment>().canMove = false;
+                //gameObject.GetComponent<PlayerMovment>().canMove = false;
                 Cursor.lockState = CursorLockMode.None;
                 mainUI.GetComponent<Canvas>().enabled = true;
                 addItems();
@@ -46,7 +46,7 @@ public class playerEq : MonoBehaviour
             }
             else //2 naciœniêcie
             {
-                gameObject.GetComponent<PlayerMovment>().canMove = true;
+                //gameObject.GetComponent<PlayerMovment>().canMove = true;
                 Cursor.lockState = CursorLockMode.Locked;
                 mainUI.GetComponent<Canvas>().enabled = false;
                 deleteUI();

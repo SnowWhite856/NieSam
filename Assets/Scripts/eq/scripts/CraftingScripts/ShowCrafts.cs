@@ -27,7 +27,7 @@ public class ShowCrafts : MonoBehaviour
             var obj = FindObjectOfType<playerEq>();
             if (isOn)
             {
-                obj.GetComponent<PlayerMovment>().canMove = false;
+                //obj.GetComponent<PlayerMovment>().canMove = false;
                 craftingUI.GetComponent<Canvas>().enabled = true;
                 Cursor.lockState = CursorLockMode.None;
                 showCrafts();
@@ -35,7 +35,7 @@ public class ShowCrafts : MonoBehaviour
             }
             else
             {
-                obj.GetComponent<PlayerMovment>().canMove = true;
+                //obj.GetComponent<PlayerMovment>().canMove = true;
                 craftingUI.GetComponent<Canvas>().enabled = false;
                 Cursor.lockState = CursorLockMode.Locked;
                 destroyItems();
