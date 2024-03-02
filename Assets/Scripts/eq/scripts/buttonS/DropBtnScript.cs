@@ -10,20 +10,20 @@ public class DropBtnScript : MonoBehaviour
 {
     public Button myButton;
     public TextMeshProUGUI myText;
-    private GameObject toDelete;
+    private itemsClass toDelete;
 
     public void DropItemClick()
     {
-        var item = FindObjectOfType<EqScipt>().item;
+        var item = FindFirstObjectByType<EqScipt>().item;
         foreach (var findItem in item)
         {
             toDelete = findItem;
         }
-        FindObjectOfType<EqScipt>().item.Remove(toDelete);
-        FindObjectOfType<playerEq>().deleteUI();
-        FindObjectOfType<playerEq>().addItems();
+        FindFirstObjectByType<EqScipt>().item.Remove(toDelete);
+        FindFirstObjectByType<playerEq>().deleteUI();
+        FindFirstObjectByType<playerEq>().addItems();
         myText.text = "";
-        FindObjectOfType<ShowItemBtn>().itemRarity.text = "";
+        FindFirstObjectByType<ShowItemBtn>().itemRarity.text = "";
 
     }
     private void Update()

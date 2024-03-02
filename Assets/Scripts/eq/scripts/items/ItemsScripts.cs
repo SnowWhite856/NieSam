@@ -7,19 +7,17 @@ public class Item1Script : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        FindObjectOfType<playerEq>().addItems();
-        FindObjectOfType<playerEq>().deleteUI();
+        FindFirstObjectByType<playerEq>().addItems();
+        FindFirstObjectByType<playerEq>().deleteUI();
 
-        var limit = FindObjectOfType<playerEq>().allItems;
+        var limit = FindFirstObjectByType<playerEq>().allItems;
         if (limit > 14)
         {
-            FindObjectOfType<playerEq>().showInfo();
+            FindFirstObjectByType<playerEq>().showInfo();
             return;
         }
 
-        Vector3 pozycja = new Vector3(0, -20, 0);
-        FindObjectOfType<EqScipt>().item.Add(gameObject);
-        //Destroy(gameObject);
-        gameObject.transform.position = pozycja;
+        FindFirstObjectByType<EqScipt>().item.Add(gameObject.GetComponent<itemsClass>());
+        gameObject.SetActive(false);
     }
 }

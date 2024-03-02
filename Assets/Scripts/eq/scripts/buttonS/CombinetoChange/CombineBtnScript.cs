@@ -8,12 +8,12 @@ public class CombineBtnScript : MonoBehaviour
 {
     public Button myButton;
     public TextMeshProUGUI myText;
-    public GameObject[] toCombine = new GameObject[2];
+    public itemsClass[] toCombine = new itemsClass[2];
 
-    private GameObject temp;
+    private itemsClass temp;
     public void Combine()
     {
-        var item = FindObjectOfType<EqScipt>().item;
+        var item = FindFirstObjectByType<EqScipt>().item;
 
         if (toCombine[1] != null) return;
         foreach (var findItem in item)
@@ -34,11 +34,11 @@ public class CombineBtnScript : MonoBehaviour
             toCombine[1] = temp;
         }
 
-        FindObjectOfType<EqScipt>().item.Remove(temp);
-        FindObjectOfType<playerEq>().deleteUI();
-        FindObjectOfType<playerEq>().addItems();
+        FindFirstObjectByType<EqScipt>().item.Remove(temp);
+        FindFirstObjectByType<playerEq>().deleteUI();
+        FindFirstObjectByType<playerEq>().addItems();
         myText.text = "";
-        FindObjectOfType<ShowItemBtn>().itemRarity.text = "";
+        FindFirstObjectByType<ShowItemBtn>().itemRarity.text = "";
         temp = null;
     }
 

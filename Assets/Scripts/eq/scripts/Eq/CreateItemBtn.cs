@@ -15,10 +15,10 @@ public class CreateItemBtn : MonoBehaviour
 
     private void craftItem()
     {
-        var item = FindObjectOfType<EqScipt>().item;
+        var item = FindFirstObjectByType<EqScipt>().item;
         List<string> needItems = new List<string>();
         List<string> tempItems = new List<string>();
-        List<GameObject> itemsToRemove = new List<GameObject>();
+        List<itemsClass> itemsToRemove = new List<itemsClass>();
 
         //otwieranie danych z xml
         XDocument doc = XDocument.Load(path);
@@ -56,7 +56,7 @@ public class CreateItemBtn : MonoBehaviour
             //dodawnie nowego przedmiotu
             var newItem = newItemName.text;
             var itemPath = "Prefabs/" + newItem;
-            GameObject prefab = Resources.Load<GameObject>(itemPath);
+            itemsClass prefab = Resources.Load<itemsClass>(itemPath);
             item.Add(prefab);
         }
 

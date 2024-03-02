@@ -1,19 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.AI.Navigation;
+using Unity.VisualScripting;
+//using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.PlayerLoop;
 
 public class Enemy1Script : MonoBehaviour
 {
     public NavMeshAgent agent;
     public GameObject target;
-    public float radius = 35.0f;
+    
+    public bool IsEnemyKnow = false;
+
     private bool reachDestination = true;
     private Vector3 randomPoint;
+    private bool isOnAttack = false;
 
     public string enemyStatus = "Patroling";
-    void Update()
+
+    
+
+    void FixedUpdate()
     {
         switch (enemyStatus)
         {
@@ -29,17 +37,31 @@ public class Enemy1Script : MonoBehaviour
                 attack();
                 break;
         }
+
+        if (gameObject.tag == "Range" && enemyStatus == "Chase") enemyStatus = "Attack"; 
+
+        if (enemyStatus == "Attack" && IsEnemyKnow)
+        {
+            Quaternion rotation = Quaternion.LookRotation(target.transform.position - transform.position);
+            transform.rotation = rotation;
+        }
     }
+    public float radius = 35.0f;
 
     void patroling()
     {
+        var currentX = target.transform.position.x;
+        var currentZ = target.transform.position.z;
+
         if (reachDestination)
         {
             reachDestination = false;
-            float randomX = Random.Range(10, radius);
-            float randomZ = Random.Range(20, radius);
+            float randomX = Random.Range(-15, 15);
+            float randomZ = Random.Range(-15, 15);
             float randomY = target.transform.position.y;
-            randomPoint = new Vector3(randomX, randomY, randomZ);
+
+            randomPoint = new Vector3(currentX+randomX, randomY, currentZ+randomZ);
+
             agent.SetDestination(randomPoint);
             StartCoroutine(destinationFunc());
         }
@@ -53,21 +75,53 @@ public class Enemy1Script : MonoBehaviour
         reachDestination=true;
     }
 
+    public float lookRadius = 20f;
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(gameObject.transform.position, lookRadius);
+    }
+
     private void chase()
     {
+        Debug.Log("player spot");
         agent.SetDestination(target.transform.position);
+        IsEnemyKnow = true;
+
+        float distance = Vector3.Distance(target.transform.position, transform.position);
+
+        if (distance >= lookRadius)
+        {
+            enemyStatus = "Patroling";
+            IsEnemyKnow = false;
+        }
     }
 
     private void attack()
     {
+        if (!IsEnemyKnow) return;
+       
         agent.SetDestination(agent.transform.position);
-        StartCoroutine(attackPlayerCd());
-    }
+        float distance = Vector3.Distance(target.transform.position, transform.position);
 
-    IEnumerator attackPlayerCd()
-    {
-        yield return new WaitForSeconds(2);
-        FindObjectOfType<EnemyBullet>().bulletAttack();
-        Debug.Log("attack");
+        switch (gameObject.tag)
+        {
+            case "Range":
+                if (distance <= lookRadius)
+                {
+                    gameObject.GetComponent<RangeEnemyClass>().RangeAttack();
+                }
+                break;
+
+            case "Mele":
+                gameObject.GetComponent<MeleEnemyClass>().MeleAttack();
+                break;
+        }
+
+        if (distance >= lookRadius)
+        {
+            enemyStatus = "Patroling";
+            IsEnemyKnow = false;
+        }
     }
 }

@@ -13,10 +13,15 @@ public class BulletAnimation : MonoBehaviour
     }
     IEnumerator destroyBullet()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
     }
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("player hit!");
     }
 }

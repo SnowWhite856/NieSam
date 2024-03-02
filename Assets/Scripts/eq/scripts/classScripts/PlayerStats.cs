@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour
    public int movmentSpeed = 0;
 
     //zmiana podczas zdjêcie przedmiotu
-    public void TakeOffItem(GameObject newItem, string type)
+    public void TakeOffItem(itemsClass newItem, string type)
     {
         switch (type)
         {
@@ -30,7 +30,7 @@ public class PlayerStats : MonoBehaviour
     }
 
     //zmiana podczas za³o¿enia przedmiotu
-    public void TakeOnItem(GameObject newItem, string type)
+    public void TakeOnItem(itemsClass newItem, string type)
     {
         switch (type)
         {

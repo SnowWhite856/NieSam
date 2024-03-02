@@ -9,22 +9,22 @@ public class ClearCombinieBtnScript : MonoBehaviour
     public bool isBack;
     public void ClearCombine()
     {
-        var item = FindObjectOfType<EqScipt>().item;
+        var item = FindFirstObjectByType<EqScipt>().item;
 
         for (int i = 0; i < 2; i++)
         {
-            if(FindObjectOfType<CombineBtnScript>().toCombine[i] != null)
+            if(FindFirstObjectByType<CombineBtnScript>().toCombine[i] != null)
             {
                 if (isBack)
                 {
-                    item.Add(FindObjectOfType<CombineBtnScript>().toCombine[i]);
+                    item.Add(FindFirstObjectByType<CombineBtnScript>().toCombine[i]);
                 }
-                FindObjectOfType<CombineBtnScript>().toCombine[i] = null;
+                FindFirstObjectByType<CombineBtnScript>().toCombine[i] = null;
             }
         }
 
-        FindObjectOfType<playerEq>().deleteUI();
-        FindObjectOfType<playerEq>().addItems();
+        FindFirstObjectByType<playerEq>().deleteUI();
+        FindFirstObjectByType<playerEq>().addItems();
         isBack = true;
     }
 

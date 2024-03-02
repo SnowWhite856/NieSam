@@ -16,11 +16,11 @@ public class EquipBtnScript : MonoBehaviour
     public TextMeshProUGUI BootsSlot;
 
 
-    private GameObject toEquip;
+    private itemsClass toEquip;
 
     public void EquipItemClick()
     {
-        var item = FindObjectOfType<EqScipt>().item;
+        var item = FindFirstObjectByType<EqScipt>().item;
         foreach (var findItem in item)
         {
             if (findItem.GetComponent<itemsClass>().Description == itemDescription.text)
@@ -36,74 +36,75 @@ public class EquipBtnScript : MonoBehaviour
             case "wapon":
                 if (WaponSlot.text != "")
                 {
-                    var pastWapon = FindObjectOfType<EqScipt>().currentWapon;
-                    FindObjectOfType<EqScipt>().item.Add(pastWapon);
-                    FindObjectOfType<PlayerStats>().TakeOffItem(pastWapon, "wapon");
+                    var pastWapon = FindFirstObjectByType<EqScipt>().currentWapon;
+                    FindFirstObjectByType<EqScipt>().item.Add(pastWapon);
+                    FindFirstObjectByType<PlayerStats>().TakeOffItem(pastWapon, "wapon");
                 }
-                FindObjectOfType<EqScipt>().currentWapon = toEquip;
-                FindObjectOfType<EqScipt>().item.Remove(toEquip);
+                FindFirstObjectByType<EqScipt>().currentWapon = (WaponsClass)toEquip;
+                FindFirstObjectByType<EqScipt>().item.Remove(toEquip);
                 WaponSlot.text = toEquip.GetComponent<itemsClass>().name;
-                FindObjectOfType<PlayerStats>().TakeOnItem(toEquip,"wapon");
-                FindObjectOfType<EqScipt>().setWapon();
+                FindFirstObjectByType<PlayerStats>().TakeOnItem(toEquip,"wapon");
+                FindFirstObjectByType<EqScipt>().setWapon();
                 break;
 
             case "wapon2":
                 if (WaponSlot2.text != "")
                 {
-                    var pastWapon = FindObjectOfType<EqScipt>().currentWapon2;
-                    FindObjectOfType<EqScipt>().item.Add(pastWapon);
-                    FindObjectOfType<PlayerStats>().TakeOffItem(pastWapon, "wapon");
+                    var pastWapon = FindFirstObjectByType<EqScipt>().currentWapon2;
+                    FindFirstObjectByType<EqScipt>().item.Add(pastWapon);
+                    FindFirstObjectByType<PlayerStats>().TakeOffItem(pastWapon, "wapon");
                 }
-                FindObjectOfType<EqScipt>().currentWapon2 = toEquip;
-                FindObjectOfType<EqScipt>().item.Remove(toEquip);
+                FindFirstObjectByType<EqScipt>().currentWapon2 = (WaponsClass)toEquip;
+                FindFirstObjectByType<EqScipt>().item.Remove(toEquip);
                 WaponSlot2.text = toEquip.GetComponent<itemsClass>().name;
-                FindObjectOfType<PlayerStats>().TakeOnItem(toEquip, "wapon");
+                FindFirstObjectByType<PlayerStats>().TakeOnItem(toEquip, "wapon");
+                FindFirstObjectByType<EqScipt>().setWapon2();
                 break;
 
             case "helmet":
                 if (HelmetSlot.text != "")
                 {
-                    var pastHelmet = FindObjectOfType<EqScipt>().currentHelmet;
-                    FindObjectOfType<EqScipt>().item.Add(pastHelmet);
-                    FindObjectOfType<PlayerStats>().TakeOffItem(pastHelmet, "armor");
+                    var pastHelmet = FindFirstObjectByType<EqScipt>().currentHelmet;
+                    FindFirstObjectByType<EqScipt>().item.Add(pastHelmet);
+                    FindFirstObjectByType<PlayerStats>().TakeOffItem(pastHelmet, "armor");
                 }
-                FindObjectOfType<EqScipt>().currentHelmet = toEquip;
-                FindObjectOfType<EqScipt>().item.Remove(toEquip);
+                FindFirstObjectByType<EqScipt>().currentHelmet = (ArmourClass)toEquip;
+                FindFirstObjectByType<EqScipt>().item.Remove(toEquip);
                 HelmetSlot.text = toEquip.GetComponent<itemsClass>().name;
-                FindObjectOfType<PlayerStats>().TakeOnItem(toEquip, "armor");
+                FindFirstObjectByType<PlayerStats>().TakeOnItem(toEquip, "armor");
                 break;
 
             case "plate":
                 if (PlateSlot.text != "")
                 {
-                    var pastPlate = FindObjectOfType<EqScipt>().currentPlate;
-                    FindObjectOfType<EqScipt>().item.Add(pastPlate);
-                    FindObjectOfType<PlayerStats>().TakeOffItem(pastPlate, "armor");
+                    var pastPlate = FindFirstObjectByType<EqScipt>().currentPlate;
+                    FindFirstObjectByType<EqScipt>().item.Add(pastPlate);
+                    FindFirstObjectByType<PlayerStats>().TakeOffItem(pastPlate, "armor");
                 }
-                FindObjectOfType<EqScipt>().currentPlate = toEquip;
-                FindObjectOfType<EqScipt>().item.Remove(toEquip);
+                FindFirstObjectByType<EqScipt>().currentPlate = (ArmourClass)toEquip;
+                FindFirstObjectByType<EqScipt>().item.Remove(toEquip);
                 PlateSlot.text = toEquip.GetComponent<itemsClass>().name;
-                FindObjectOfType<PlayerStats>().TakeOnItem(toEquip, "armor");
+                FindFirstObjectByType<PlayerStats>().TakeOnItem(toEquip, "armor");
                 break;
 
             case "boots":
                 if (BootsSlot.text != "")
                 {
-                    var pastBoots = FindObjectOfType<EqScipt>().currentBoots;
-                    FindObjectOfType<EqScipt>().item.Add(pastBoots);
-                    FindObjectOfType<PlayerStats>().TakeOffItem(pastBoots, "armor");
+                    var pastBoots = FindFirstObjectByType<EqScipt>().currentBoots;
+                    FindFirstObjectByType<EqScipt>().item.Add(pastBoots);
+                    FindFirstObjectByType<PlayerStats>().TakeOffItem(pastBoots, "armor");
                 }
-                FindObjectOfType<EqScipt>().currentBoots = toEquip;
-                FindObjectOfType<EqScipt>().item.Remove(toEquip);
+                FindFirstObjectByType<EqScipt>().currentBoots = (ArmourClass)toEquip;
+                FindFirstObjectByType<EqScipt>().item.Remove(toEquip);
                 BootsSlot.text = toEquip.GetComponent<itemsClass>().name;
-                FindObjectOfType<PlayerStats>().TakeOnItem(toEquip, "armor");
+                FindFirstObjectByType<PlayerStats>().TakeOnItem(toEquip, "armor");
                 break;
         }
 
-        FindObjectOfType<playerEq>().deleteUI();
-        FindObjectOfType<playerEq>().addItems();
+        FindFirstObjectByType<playerEq>().deleteUI();
+        FindFirstObjectByType<playerEq>().addItems();
         itemDescription.text = "";
-        FindObjectOfType<ShowItemBtn>().itemRarity.text = "";
+        FindFirstObjectByType<ShowItemBtn>().itemRarity.text = "";
         toEquip = null;
     }
 

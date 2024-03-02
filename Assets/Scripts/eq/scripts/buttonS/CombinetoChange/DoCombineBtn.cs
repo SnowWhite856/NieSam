@@ -8,15 +8,15 @@ public class DoCombineBtn : MonoBehaviour
 {
     public Button myButton;
     public TextMeshProUGUI Info;
-    public List<GameObject> crafts = new List<GameObject>();
+    public List<itemsClass> crafts = new List<itemsClass>();
     //public GameObject item3;
     public void doCombine()
     {
-        var item1 = FindObjectOfType<CombineBtnScript>().toCombine[0];
-        var item2 = FindObjectOfType<CombineBtnScript>().toCombine[1];
-        var item = FindObjectOfType<EqScipt>().item;
+        var item1 = FindFirstObjectByType<CombineBtnScript>().toCombine[0];
+        var item2 = FindFirstObjectByType<CombineBtnScript>().toCombine[1];
+        var item = FindFirstObjectByType<EqScipt>().item;
 
-        var clear = FindObjectOfType<ClearCombinieBtnScript>();
+        var clear = FindFirstObjectByType<ClearCombinieBtnScript>();
 
         if (item1 != null && item2 != null)
         {

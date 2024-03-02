@@ -7,8 +7,7 @@ public class EnemyBullet : MonoBehaviour
     public void bulletAttack()
     {
         GameObject bullet = Resources.Load<GameObject>("Prefabs/Bullet");
-        GameObject bulletSpawner = GameObject.Find("Capsule");
+        GameObject bulletSpawner = GameObject.Find("bulletSpawner");
         bulletSpawner = Instantiate(bullet , bulletSpawner.transform);
-        //bulletSpawner.transform.Translate(Vector3.forward * 19.0f * Time.deltaTime);
     }
 }

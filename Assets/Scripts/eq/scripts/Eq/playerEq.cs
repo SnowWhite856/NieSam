@@ -21,7 +21,7 @@ public class playerEq : MonoBehaviour
     private bool EqOnOff = true;
 
     public Canvas mainUI;
-
+    
     public int allItems;
 
     private void Start()
@@ -56,8 +56,8 @@ public class playerEq : MonoBehaviour
 
     }
 
-    private List<GameObject> item = new List<GameObject>();
-    public List<GameObject> BeforeList = new List<GameObject>();
+    private List<itemsClass> item = new List<itemsClass>();
+    public List<itemsClass> BeforeList = new List<itemsClass>();
 
     public void addItems()
     {
@@ -157,7 +157,7 @@ public class playerEq : MonoBehaviour
     }
 
     //add no stacable
-    public void noStacable(GameObject newObject)
+    public void noStacable(itemsClass newObject)
     {
         GameObject eqItem;
         TextMeshProUGUI text;

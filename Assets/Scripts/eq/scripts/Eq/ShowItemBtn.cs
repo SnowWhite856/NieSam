@@ -15,7 +15,7 @@ public class ShowItemBtn : MonoBehaviour
     public Image itemImage;
     public void OnButtonClick()
     {
-       var item = FindObjectOfType<EqScipt>().item;
+       var item = FindFirstObjectByType<EqScipt>().item;
 
          foreach(var findItem in item)
          {
@@ -41,7 +41,7 @@ public class ShowItemBtn : MonoBehaviour
 
     private void Awake()
     {
-        myButton = FindObjectOfType<Button>();
+        myButton = FindFirstObjectByType<Button>();
         myButton.onClick.AddListener(OnButtonClick);
     }
 }

@@ -18,7 +18,7 @@ public class CraftingsList : MonoBehaviour
 
         foreach (XElement node in item2Element.Elements())
         {
-            Debug.Log(node.Attribute("name").Value);
+           // Debug.Log(node.Attribute("name").Value);
         }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyAttacScript : MonoBehaviour
 {
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.name != "Player") return;
@@ -13,9 +14,11 @@ public class EnemyAttacScript : MonoBehaviour
         Debug.Log("attack player");
     }
 
+    
     private void OnTriggerExit(Collider other)
     {
-        var enemy = FindFirstObjectByType<Enemy1Script>().enemyStatus = "Patroling";
+        var enemy = FindFirstObjectByType<Enemy1Script>().enemyStatus = "Chase";
 
     }
+    
 }
