@@ -671,6 +671,7 @@ GameObject:
   - component: {fileID: 1420137348}
   - component: {fileID: 1420137347}
   - component: {fileID: 1420137349}
+  - component: {fileID: 1420137350}
   m_Layer: 5
   m_Name: Inv
   m_TagString: Untagged
@@ -721,9 +722,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94472225674890349b029ab2dcb52661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIs:
-  - {fileID: 9197481963319205126, guid: 4fadd5bb43d112641a71caaadd2ff8e5, type: 3}
-  - {fileID: 9197481963319205126, guid: 234319bcca9644842b99dd49b6f06a9f, type: 3}
+--- !u!114 &1420137350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420137346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c160e5dd899f97e4285703c5f73fa656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InventoryDocument: {fileID: 0}
+  GeneralUIDocument: {fileID: 0}
+  Inv: 9
+  CurrentState: 0
 --- !u!1 &1535168925
 GameObject:
   m_ObjectHideFlags: 0

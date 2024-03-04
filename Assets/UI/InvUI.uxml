@@ -9,7 +9,7 @@
             <ui:Button text="Enchantment" />
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
-            <ui:TabView name="LeftPanel" style="width: 40%;">
+            <ui:TabView name="LeftPanel" style="width: 50%;">
                 <ui:Tab label="Tab">
                     <ui:Instance template="Equipment" name="Equipment" style="height: 100%;" />
                 </ui:Tab>
@@ -18,7 +18,7 @@
                 </ui:Tab>
                 <ui:Tab label="Tab" style="height: 100%;" />
             </ui:TabView>
-            <ui:VisualElement name="Inventory" style="flex-grow: 1; max-height: 100%; background-color: rgba(4, 248, 16, 0.43);" />
+            <ui:VisualElement name="Inventory" style="flex-grow: 1; max-height: 100%; background-color: rgba(4, 248, 16, 0.43); width: 50%; max-width: 50%;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

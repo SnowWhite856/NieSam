@@ -17,3 +17,7 @@
 #Equipment, #Craft{
 	height: 100%;
 }
+
+.slot{
+	background-color: green;
+}

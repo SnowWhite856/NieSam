@@ -10,10 +10,6 @@ using Button = UnityEngine.UIElements.Button;
 public class TabViewSelector : MonoBehaviour
 {
     private VisualElement Inv;
-    public VisualTreeAsset[] UIs;
-
-    private VisualElement LeftPanelControler;
-    private VisualElement ChangePanel;
     
     private void ButtonHandler()
     {
@@ -23,13 +19,15 @@ public class TabViewSelector : MonoBehaviour
             Button button = (Button)Inv.Q<VisualElement>("ChangePanel").ElementAt(i);
             button.clickable.clicked += () =>
             {
-                Inv.Q<TabView>("LeftPanel").tabIndex = index;
+                Debug.Log("INV index: " + index);
+                Inv.Q<TabView>("LeftPanel").selectedTabIndex = index;
             };
        };
     }
 
     private void Start()
     {
-        Inv = GetComponent<UIDocument>().rootVisualElement;   
+        Inv = GetComponent<UIDocument>().rootVisualElement;
+        ButtonHandler();
     }
 }
