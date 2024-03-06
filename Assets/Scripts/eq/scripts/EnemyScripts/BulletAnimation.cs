@@ -14,6 +14,7 @@ public class BulletAnimation : MonoBehaviour
     IEnumerator destroyBullet()
     {
         yield return new WaitForSeconds(3);
+        Destroy(gameObject);
     }
     void Update()
     {

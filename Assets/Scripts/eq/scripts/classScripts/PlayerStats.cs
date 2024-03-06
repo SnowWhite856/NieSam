@@ -6,13 +6,22 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    //statystki gracza
+   //statystki gracza
    public int dmg = 0;
    public int ap = 0;
    public int hp = 0;
    public int armor = 0;
    public int movmentSpeed = 0;
 
+   public allPlayerClass playerClass;
+
+    public enum allPlayerClass
+    {
+        Tank,
+        Mage,
+        Warrior,
+        Thief
+    }
     //zmiana podczas zdjêcie przedmiotu
     public void TakeOffItem(itemsClass newItem, string type)
     {
@@ -53,37 +62,30 @@ public class PlayerStats : MonoBehaviour
         StreamReader render = new StreamReader(path);
         string classType = render.ReadLine();
         render.Close();
-        Debug.Log(classType);
+        //Debug.Log(classType);
+
         //ustawianie statystk wzglêdem klasy postaci
         switch (classType)
         {
             case "Tank":
-                dmg = 2;
-                ap = 1;
-                hp = 150;
-                armor = 50;
-                movmentSpeed = 3; break;
+                FindFirstObjectByType<TankClass>().addStats();
+                playerClass = allPlayerClass.Tank;
+                break;
 
             case "Mage":
-                dmg = 1;
-                ap = 4;
-                hp = 80;
-                armor = 15;
-                movmentSpeed = 3; break;
+                FindFirstObjectByType<MageClass>().addStats();
+                playerClass = allPlayerClass.Mage;
+                break;
 
             case "Warrior":
-                dmg = 4;
-                ap = 2;
-                hp = 100;
-                armor = 30;
-                movmentSpeed = 4; break;
+                FindFirstObjectByType<WarriorClass>().addStats();
+                playerClass = allPlayerClass.Warrior;
+                break;
 
             case "Thief":
-                dmg = 4;
-                ap = 2;
-                hp = 85;
-                armor = 20;
-                movmentSpeed = 7; break;
+                FindFirstObjectByType<ThiefClass>().addStats();
+                playerClass = allPlayerClass.Thief;
+                break;
         }
     }
 }

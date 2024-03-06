@@ -19,6 +19,12 @@ public class EqScipt : MonoBehaviour
 
     public UnityEvent onValueChanged;
 
+    public enum allMainWapon
+    {
+        Spear,
+        Sword
+    }
+
     public void addToEq(itemsClass newObject)
     {
         item.Add( newObject );
@@ -31,12 +37,20 @@ public class EqScipt : MonoBehaviour
     public void setWapon()
     {
         GameObject waponSlot = GameObject.Find("WaponSlot");
+        try
+        {
+            Transform child = waponSlot.transform.GetChild(0);
+            Destroy(child.gameObject);
+        }
+        catch { }
+
         var wapon1 = currentWapon.name;
         var itemPath = "Prefabs/"+ wapon1;
         
         GameObject prefab = Resources.Load<GameObject>(itemPath);
 
         var waponInEq = Instantiate(prefab, waponSlot.transform);
+        waponInEq.AddComponent<Rigidbody>();
         waponInEq.name = wapon1;
 
 
@@ -45,6 +59,12 @@ public class EqScipt : MonoBehaviour
     public void setWapon2()
     {
         GameObject waponSlot2 = GameObject.Find("Wapon2Slot");
+        try
+        {
+            Transform child = waponSlot2.transform.GetChild(0);
+            Destroy(child.gameObject);
+        }
+        catch { }
         var wapon2 = currentWapon2.name;
         var itemPath2 = "Prefabs/" + wapon2;
 

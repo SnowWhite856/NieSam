@@ -8,8 +8,8 @@ public class EnemyAttacScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.name != "Player") return;
-        var enemy = FindFirstObjectByType<Enemy1Script>();
-        enemy.enemyStatus = "Attack";
+        var enemy = GetComponentInParent<Enemy1Script>();
+        enemy.enemyStatus = Enemy1Script.allEnemyStatus.Attack;
         enemy.target = other.gameObject;
         Debug.Log("attack player");
     }
@@ -17,7 +17,7 @@ public class EnemyAttacScript : MonoBehaviour
     
     private void OnTriggerExit(Collider other)
     {
-        var enemy = FindFirstObjectByType<Enemy1Script>().enemyStatus = "Chase";
+        var enemy = GetComponentInParent<Enemy1Script>().enemyStatus = Enemy1Script.allEnemyStatus.Chase;
 
     }
     

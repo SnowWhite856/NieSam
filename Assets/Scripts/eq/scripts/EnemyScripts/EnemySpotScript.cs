@@ -7,9 +7,9 @@ public class EnemySpotScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var enemy = FindFirstObjectByType<Enemy1Script>();
+        var enemy = GetComponentInParent<Enemy1Script>();
         if (other.name != "Player") return;
-        enemy.enemyStatus = "Chase";
+        enemy.enemyStatus = Enemy1Script.allEnemyStatus.Chase;
         enemy.target = other.gameObject;
         Debug.Log("player found");
     }
