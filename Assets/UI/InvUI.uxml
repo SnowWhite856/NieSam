@@ -2,23 +2,25 @@
     <ui:Template name="Equipment" src="project://database/Assets/UI/Equipment.uxml?fileID=9197481963319205126&amp;guid=4fadd5bb43d112641a71caaadd2ff8e5&amp;type=3#Equipment" />
     <ui:Template name="Craft" src="project://database/Assets/UI/Craft.uxml?fileID=9197481963319205126&amp;guid=234319bcca9644842b99dd49b6f06a9f&amp;type=3#Craft" />
     <Style src="project://database/Assets/UI/EqStyle.uss?fileID=7433441132597879392&amp;guid=009c696ffe417464dad1325edfbe7f66&amp;type=3#EqStyle" />
-    <ui:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: column; flex-shrink: 1; flex-basis: auto;">
-        <ui:VisualElement name="ChangePanel" style="flex-grow: 1; max-height: 10%; background-color: rgba(250, 0, 0, 0.47); flex-direction: row; height: 10%;">
-            <ui:Button text="Equipment" />
-            <ui:Button text="Craft" />
-            <ui:Button text="Enchantment" />
-        </ui:VisualElement>
-        <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
-            <ui:TabView name="LeftPanel" style="width: 50%;">
-                <ui:Tab label="Tab">
-                    <ui:Instance template="Equipment" name="Equipment" style="height: 100%;" />
-                </ui:Tab>
-                <ui:Tab label="Tab">
-                    <ui:Instance template="Craft" name="Craft" />
-                </ui:Tab>
-                <ui:Tab label="Tab" style="height: 100%;" />
-            </ui:TabView>
-            <ui:VisualElement name="Inventory" style="flex-grow: 1; max-height: 100%; background-color: rgba(4, 248, 16, 0.43); width: 50%; max-width: 50%;" />
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; align-self: stretch; justify-content: center; border-left-color: rgb(34, 34, 34); border-right-color: rgb(34, 34, 34); border-top-color: rgb(34, 34, 34); border-bottom-color: rgb(34, 34, 34); flex-direction: row;">
+        <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-direction: row; flex-shrink: 0; flex-basis: auto; width: 80%; height: 75%; align-self: center; justify-content: center; left: auto; right: auto; position: relative; top: auto; bottom: auto;">
+            <ui:VisualElement name="ChangePanel" style="flex-grow: 1; width: 10%; padding-top: 5%; padding-bottom: 5%; max-width: 10%; left: auto;">
+                <ui:Button style="background-image: none;" />
+                <ui:Button text="Button" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row; height: 100%; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-left-color: rgba(0, 0, 0, 0.74); border-right-color: rgba(0, 0, 0, 0.74); border-top-color: rgba(0, 0, 0, 0.74); border-bottom-color: rgba(0, 0, 0, 0.74); max-height: none; width: 90%;">
+                <ui:TabView name="LeftPanel" style="width: 40%; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgba(0, 0, 0, 0.64); border-right-color: rgba(0, 0, 0, 0.64); border-top-color: rgba(0, 0, 0, 0.64); border-bottom-color: rgba(0, 0, 0, 0.64);">
+                    <ui:Tab label="Tab" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; border-left-color: rgba(207, 38, 38, 0.56); border-right-color: rgba(207, 38, 38, 0.56); border-top-color: rgba(207, 38, 38, 0.56); border-bottom-color: rgba(207, 38, 38, 0.56);">
+                        <ui:Instance template="Equipment" name="Equipment" style="height: 100%; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; border-left-color: rgba(156, 41, 41, 0.65); border-right-color: rgba(156, 41, 41, 0.65); border-top-color: rgba(156, 41, 41, 0.65); border-bottom-color: rgba(156, 41, 41, 0.65);" />
+                    </ui:Tab>
+                    <ui:Tab label="Tab">
+                        <ui:Instance template="Craft" name="Craft" />
+                    </ui:Tab>
+                    <ui:Tab label="Tab" style="height: 100%;" />
+                </ui:TabView>
+                <ui:VisualElement name="Inventory" style="flex-grow: 1; max-height: 100%; background-color: rgba(4, 248, 16, 0.43); width: auto; max-width: none; border-top-right-radius: 15px; border-bottom-right-radius: 15px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="FillerBox" style="flex-grow: 1; width: 10%;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
