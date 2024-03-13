@@ -5,6 +5,12 @@ using UnityEngine;
 public class MeleEnemyClass : EnemyClass
 {
     private bool isOnAttack = false;
+    private int attackTime = 3;
+
+    private void Start()
+    {
+        attackTime = GetComponent<EnemyClass>().attackSpeed;
+    }
 
     public void MeleAttack()
     {
@@ -19,7 +25,7 @@ public class MeleEnemyClass : EnemyClass
 
     IEnumerator attackPlayerCd(Animator anim)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(attackTime);
         anim.SetTrigger("Attack");
         isOnAttack = false;
     }

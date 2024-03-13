@@ -3,12 +3,23 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - sword
+  - UiItemTest
+  - item
+  - wapon
+  - helmet
+  - plate
+  - boots
+  - wapon2
+  - CraftItemTag
+  - Mele
+  - Range
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - whatIsGround
+  - 
   - Water
   - UI
   - 

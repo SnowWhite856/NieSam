@@ -431,10 +431,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 322847807781324773}
   target: {fileID: 7160813875038341472}
-  radius: 20
+  lookRadius: 20
   IsEnemyKnow: 0
   enemyStatus: Patroling
-  lookRadius: 20
+  radius: 20
 --- !u!195 &322847807781324773
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -472,6 +472,8 @@ MonoBehaviour:
   hp: 0
   armor: 0
   damage: 0
+  movmentSpeed: 4
+  attackSpeed: 2
 --- !u!95 &-5256860153082617528
 Animator:
   serializedVersion: 7
