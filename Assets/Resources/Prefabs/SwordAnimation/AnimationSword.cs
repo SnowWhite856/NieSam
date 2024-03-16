@@ -22,7 +22,7 @@ public class AnimationSword : MonoBehaviour
         {
             anim.SetTrigger("SowrdAttack");
         }
-
+       
         if (Input.GetKey(KeyCode.W))
         {
             anim.SetTrigger("WalkingWithSword");

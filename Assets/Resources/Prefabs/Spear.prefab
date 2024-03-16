@@ -186,6 +186,7 @@ MonoBehaviour:
   stackLimit: 0
   Description: Spear Description
   spriteImage: {fileID: 0}
+  Id: 0
   attackDmg: 0
   ablilityDmg: 0
   atackSpeed: 0

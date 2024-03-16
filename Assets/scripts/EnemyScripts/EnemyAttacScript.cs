@@ -11,14 +11,13 @@ public class EnemyAttacScript : MonoBehaviour
         var enemy = GetComponentInParent<Enemy1Script>();
         enemy.enemyStatus = Enemy1Script.allEnemyStatus.Attack;
         enemy.target = other.gameObject;
-        Debug.Log("attack player");
+        //Debug.Log("attack player");
     }
 
     
     private void OnTriggerExit(Collider other)
     {
         var enemy = GetComponentInParent<Enemy1Script>().enemyStatus = Enemy1Script.allEnemyStatus.Chase;
-
     }
     
 }

@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class Item1Script : MonoBehaviour
 {
-    private void OnMouseDown()
+    private void OnMouseOver()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+
         FindFirstObjectByType<playerEq>().addItems();
         FindFirstObjectByType<playerEq>().deleteUI();
 
@@ -18,6 +21,9 @@ public class Item1Script : MonoBehaviour
         }
         Debug.Log("add");
         FindFirstObjectByType<EqScipt>().item.Add(gameObject.GetComponent<itemsClass>());
+        gameObject.GetComponent<BoxCollider>().enabled = false;
         gameObject.SetActive(false);
+        }
     }
+
 }

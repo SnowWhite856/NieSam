@@ -11,6 +11,6 @@ public class EnemySpotScript : MonoBehaviour
         if (other.name != "Player") return;
         enemy.enemyStatus = Enemy1Script.allEnemyStatus.Chase;
         enemy.target = other.gameObject;
-        Debug.Log("player found");
+        //Debug.Log("player found");
     }
 }

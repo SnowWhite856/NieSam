@@ -16,12 +16,14 @@ public class Enemy1Script : MonoBehaviour
     private int movmentSpeed = 3;
     private bool reachDestination = true;
     private Vector3 randomPoint;
+    private bool isDead = false;
    // private bool isOnAttack = false;
 
     public allEnemyStatus enemyStatus;
 
     private void Start()
     {
+        FindFirstObjectByType<EnemyWaves>().enemysLeft++;
         enemyStatus = allEnemyStatus.Patroling;
         movmentSpeed = GetComponent<EnemyClass>().movmentSpeed;
         GetComponent<NavMeshAgent>().speed = movmentSpeed;
@@ -31,8 +33,19 @@ public class Enemy1Script : MonoBehaviour
     {
         Patroling,
         Chase,
-        Attack
+        Attack,
+        dead
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Player" || gameObject.GetComponent<EnemyClass>().hp <= 0) return;
+        WaponsClass takDmage = FindFirstObjectByType<EqScipt>().currentWapon;
+        gameObject.GetComponent<EnemyClass>().hp -= takDmage.GetComponent<WaponsClass>().attackDmg;
+        enemyStatus = allEnemyStatus.dead;
+        Debug.Log("enemy hit!");
+    }
+
     void FixedUpdate()
     {
         switch (enemyStatus)
@@ -48,13 +61,27 @@ public class Enemy1Script : MonoBehaviour
             case allEnemyStatus.Attack:
                 attack();
                 break;
+
+            case allEnemyStatus.dead:
+                dead();
+                break;
         }
+    }
+
+    void dead()
+    {
+        if(isDead) return;
+        gameObject.AddComponent<Rigidbody>();
+        gameObject.GetComponent<NavMeshAgent>().enabled = false;
+        FindFirstObjectByType<EnemyWaves>().enemysLeft -= 1;
+        isDead = true;
     }
 
     //enemy patroling
     public float radius = 35.0f;
     void patroling()
     {
+        if(isDead) return;
         var currentX = target.transform.position.x;
         var currentZ = target.transform.position.z;
 
@@ -89,7 +116,7 @@ public class Enemy1Script : MonoBehaviour
     //enemy chaseing player
     private void chase()
     {
-        Debug.Log("player spot");
+        if (isDead) return;
         if (gameObject.tag == "Range") enemyStatus = allEnemyStatus.Attack;
 
         agent.SetDestination(target.transform.position);
@@ -108,6 +135,7 @@ public class Enemy1Script : MonoBehaviour
     private void attack()
     {
         if (!IsEnemyKnow) return;
+        if (isDead) return;
 
         if (IsEnemyKnow)
         {

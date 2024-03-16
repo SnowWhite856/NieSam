@@ -22,7 +22,6 @@ public class chestScript : MonoBehaviour
     private void OnMouseDown()
     {
         var path = "Prefabs/" + newWappon;
-        //Debug.Log(path);
         GameObject prefab = Resources.Load<GameObject>(path);
         Vector3 location = gameObject.transform.position;
         Instantiate(prefab, location, Quaternion.identity);
