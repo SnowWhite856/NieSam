@@ -23,7 +23,7 @@ public class ClassChoose : MonoBehaviour
         writer.Close();
         
         //³adowanie gry
-        SceneManager.LoadScene("scene1");
+        SceneManager.LoadScene("BattleTest1");
     }
 
     private void OnMouseEnter()

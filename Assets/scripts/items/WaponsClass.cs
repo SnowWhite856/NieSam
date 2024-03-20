@@ -9,4 +9,5 @@ public class WaponsClass : itemsClass
     public float atackSpeed;
     public int manaCost;
     public string rarity;
+
 }

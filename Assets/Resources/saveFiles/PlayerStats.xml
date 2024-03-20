@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Player>
+  <dmg>4</dmg>
+  <ap>2</ap>
+  <hp>85</hp>
+  <armor>20</armor>
+  <movmentSpeed>7</movmentSpeed>
+</Player>

@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class EnemyAttacScript : MonoBehaviour
 {
-    
+    private void Start()
+    {
+        GetComponentInParent<Enemy1Script>().enemyStatus = Enemy1Script.allEnemyStatus.Chase;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.name != "Player") return;

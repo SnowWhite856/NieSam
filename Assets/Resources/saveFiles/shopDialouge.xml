@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Dialogue>
+  <text id="1">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</text>
+  <text id="2">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </text>
+  <text id="3">Ut enim ad minim veniam,</text>
+  <text id="4">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</text>
+</Dialogue>

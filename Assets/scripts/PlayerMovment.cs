@@ -35,7 +35,15 @@ public class PlayerMovment : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            direction += gameObject.transform.forward * -1f;
+            direction += gameObject.transform.forward * -5f;
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            direction += gameObject.transform.right * -15f;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            direction += gameObject.transform.right * 15f;
         }
 
         xRotation += Input.GetAxis("Mouse X") * Time.deltaTime * 220f;

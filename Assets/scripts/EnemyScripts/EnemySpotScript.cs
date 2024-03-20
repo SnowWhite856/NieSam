@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpotScript : MonoBehaviour
 {
 
+    /*
     private void OnTriggerEnter(Collider other)
     {
         var enemy = GetComponentInParent<Enemy1Script>();
@@ -13,4 +14,5 @@ public class EnemySpotScript : MonoBehaviour
         enemy.target = other.gameObject;
         //Debug.Log("player found");
     }
+    */
 }

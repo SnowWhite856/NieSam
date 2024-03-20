@@ -13,6 +13,11 @@ public class RangeEnemyClass : EnemyClass
         attackTime = GetComponent<EnemyClass>().attackSpeed;
     }
 
+    private void Update()
+    {
+        RangeAttack();
+    }
+
     public void RangeAttack()
     {
         if (isOnAttack) return;
@@ -23,7 +28,7 @@ public class RangeEnemyClass : EnemyClass
     IEnumerator attackPlayerCd()
     {
         FindFirstObjectByType<EnemyBullet>().bulletAttack();
-        Debug.Log("attack");
+        //Debug.Log("attack");
         yield return new WaitForSeconds(attackTime);
         isOnAttack=false;
     }

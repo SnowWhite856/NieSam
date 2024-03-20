@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 322847807781324773}
-  target: {fileID: 7160813875038341472}
+  target: {fileID: 5015700258236797702, guid: 5e64f7d0904bf1b46b24dd668988f7b0, type: 3}
   lookRadius: 20
   IsEnemyKnow: 0
   enemyStatus: 0
