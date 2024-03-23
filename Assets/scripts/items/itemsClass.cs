@@ -15,6 +15,7 @@ public class itemsClass : MonoBehaviour
     public string Description;
    // public Image spriteImage;
     public int Id;
+<<<<<<< HEAD
 
     private int reps = 0;
 
@@ -25,6 +26,10 @@ public class itemsClass : MonoBehaviour
         this.Description = Description;
     }
 
+=======
+    private int reps = 0;
+
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.B))

@@ -39,6 +39,7 @@
     <Description id="4">Spear description </Description>
     <Id id="4">3</Id>
   </Spear>
+<<<<<<< HEAD
   <sword id="5">
     <attackDmg id="5">15</attackDmg>
     <ablilityDmg id="5">0</ablilityDmg>
@@ -51,4 +52,6 @@
     <Description id="5">Just awesome sword</Description>
     <Id id="5">0</Id>
   </sword>
+=======
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
 </Items>

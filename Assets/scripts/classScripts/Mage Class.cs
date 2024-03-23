@@ -17,7 +17,11 @@ public class MageClass : MonoBehaviour
         XmlNode playerArmor = xml.SelectSingleNode("Player/armor");
         XmlNode playerMS = xml.SelectSingleNode("Player/movmentSpeed");
 
+<<<<<<< HEAD
         playerDmg.InnerText = "3";
+=======
+        playerDmg.InnerText = "1";
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
         playerHp.InnerText = "80";
         playerAp.InnerText = "4";
         playerArmor.InnerText = "15";

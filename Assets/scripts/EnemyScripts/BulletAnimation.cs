@@ -26,7 +26,10 @@ public class BulletAnimation : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //FindFirstObjectByType<PlayerStats>().hp;
+<<<<<<< HEAD
         if (other.name != "Player") return;
+=======
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
         dmg = FindFirstObjectByType<RangeEnemyClass>().damage;
         double absorbDmg = FindFirstObjectByType<PlayerStats>().armor;
 
@@ -35,5 +38,11 @@ public class BulletAnimation : MonoBehaviour
         Debug.Log("player hp: " + currentHp + " dmg taken: "+dmg+ " aborbe dmg:" +absorbDmg + " total dmg: "+ Math.Round(dmg - absorbDmg / 5));
 
         FindFirstObjectByType<PlayerStats>().hp -= Math.Round(dmg - absorbDmg/5);
+<<<<<<< HEAD
+=======
+
+        //Debug.Log("current hp: " + currentHp);
+        //Debug.Log("player hit!");
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
     }
 }

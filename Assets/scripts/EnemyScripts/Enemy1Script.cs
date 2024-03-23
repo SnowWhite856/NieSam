@@ -45,6 +45,7 @@ public class Enemy1Script : MonoBehaviour
         if (other.name == "Player" || enemyStatus == allEnemyStatus.dead || !canTakeDmg) return;
         canTakeDmg = false;
         WaponsClass takDmage = FindFirstObjectByType<EqScipt>().currentWapon;
+<<<<<<< HEAD
         gameObject.GetComponent<EnemyClass>().hp -= (takDmage.GetComponent<WaponsClass>().attackDmg + FindFirstObjectByType<PlayerStats>().dmg);
 
         //do zrobienia
@@ -52,6 +53,15 @@ public class Enemy1Script : MonoBehaviour
         //gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,targetPosition,200f*Time.deltaTime);
 
         //gameObject.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward * -50f);
+=======
+        gameObject.GetComponent<EnemyClass>().hp -= takDmage.GetComponent<WaponsClass>().attackDmg;
+        /*
+        if(gameObject.GetComponent<EnemyClass>().hp <= 0)
+        {
+            enemyStatus = allEnemyStatus.dead;
+        }
+        */
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
         //Debug.Log("enemy hit!");
         StartCoroutine(waitDmg());
     }
@@ -96,6 +106,7 @@ public class Enemy1Script : MonoBehaviour
         gameObject.GetComponent<NavMeshAgent>().enabled = false;
         FindFirstObjectByType<EnemyWaves>().enemysLeft -= 1;
         isDead = true;
+<<<<<<< HEAD
         StartCoroutine(destoryObject());
     }
 
@@ -104,6 +115,8 @@ public class Enemy1Script : MonoBehaviour
         yield return new WaitForSeconds(5);
         FindFirstObjectByType<PlayerStats>().coins++;
         Destroy(gameObject);
+=======
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
     }
 
     //enemy patroling

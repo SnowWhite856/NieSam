@@ -8,16 +8,27 @@ using System;
 using System.Reflection;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
+<<<<<<< HEAD
 using TMPro;
+=======
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
 
 public class PlayerStats : MonoBehaviour
 {
    //statystki gracza
+<<<<<<< HEAD
    public int dmg = 0;
    public double ap = 0;
    public double hp = 0;
    public double armor = 0;
    public int movmentSpeed = 0;
+=======
+   public double dmg = 0;
+   public double ap = 0;
+   public double hp = 0;
+   public double armor = 0;
+   public double movmentSpeed = 0;
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
 
    public int coins = 0;
 
@@ -59,6 +70,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     public void addCoins()
     {
         string filePath = "Assets/Resources/saveFiles/Coins.txt";
@@ -72,11 +84,16 @@ public class PlayerStats : MonoBehaviour
         File.WriteAllLines(filePath, lines);
     }
 
+=======
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
     private void Update()
     {
         if (hp <= 0)
         {
+<<<<<<< HEAD
             hp = 0;
+=======
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
             FindFirstObjectByType<PlayerMovment>().canMove = false;
 
             if (Input.GetKeyDown(KeyCode.R))
@@ -85,6 +102,7 @@ public class PlayerStats : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
             }
         }
+<<<<<<< HEAD
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -92,6 +110,8 @@ public class PlayerStats : MonoBehaviour
             SceneManager.LoadScene("ClassScene");
             Cursor.lockState = CursorLockMode.None;
         }
+=======
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
     }
 
 

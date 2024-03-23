@@ -17,7 +17,11 @@ public class WarriorClass : MonoBehaviour
         XmlNode playerArmor = xml.SelectSingleNode("Player/armor");
         XmlNode playerMS = xml.SelectSingleNode("Player/movmentSpeed");
 
+<<<<<<< HEAD
         playerDmg.InnerText = "15";
+=======
+        playerDmg.InnerText = "4";
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
         playerHp.InnerText = "100";
         playerAp.InnerText = "2";
         playerArmor.InnerText = "30";

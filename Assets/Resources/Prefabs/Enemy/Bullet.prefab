@@ -122,7 +122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49d244047a39934ab0230a52b6bcb5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   speed: 5
+=======
+  speed: 30
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
   dmg: 0
 --- !u!198 &-5014589705332181820
 ParticleSystem:

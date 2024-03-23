@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Player>
+<<<<<<< HEAD
   <dmg>15</dmg>
+=======
+  <dmg>4</dmg>
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
   <ap>2</ap>
   <hp>85</hp>
   <armor>20</armor>

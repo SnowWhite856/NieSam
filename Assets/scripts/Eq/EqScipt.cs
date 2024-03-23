@@ -79,9 +79,12 @@ public class EqScipt : MonoBehaviour
 
     private void Update()
     {
+<<<<<<< HEAD
         hpUI.text = FindFirstObjectByType<PlayerStats>().hp.ToString();
         apUI.text = FindFirstObjectByType<PlayerStats>().ap.ToString();
 
+=======
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
         if (Input.GetMouseButtonDown(0))
         {
             var waponSlot = GameObject.Find("WaponSlot");

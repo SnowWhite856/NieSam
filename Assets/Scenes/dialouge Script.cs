@@ -13,6 +13,7 @@ public class dialougeScript : MonoBehaviour
     public Button myButton;
 
     private int currentDialouge = 1;
+<<<<<<< HEAD
 
     private void Update()
     {
@@ -27,6 +28,10 @@ public class dialougeScript : MonoBehaviour
         dialougePlace.enabled = true;
         myButton.enabled = true;
 
+=======
+    public void shopOn()
+    {
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
         XDocument doc = XDocument.Load("Assets/Resources/saveFiles/shopDialouge.xml");
 
         XElement textElement = doc.Descendants("text").Where(x => x.Attribute("id")?.Value == currentDialouge.ToString()).FirstOrDefault();

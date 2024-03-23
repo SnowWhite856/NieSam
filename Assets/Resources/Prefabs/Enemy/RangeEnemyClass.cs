@@ -13,6 +13,7 @@ public class RangeEnemyClass : EnemyClass
         attackTime = GetComponent<EnemyClass>().attackSpeed;
     }
 
+<<<<<<< HEAD
     private bool canTeleport = false;
 
     private void Update()
@@ -34,6 +35,13 @@ public class RangeEnemyClass : EnemyClass
         gameObject.transform.position = new Vector3(randomX, gameObject.transform.position.y, randomZ);
         canTeleport = false;
     }
+=======
+    private void Update()
+    {
+        RangeAttack();
+    }
+
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
     public void RangeAttack()
     {
         if (isOnAttack) return;

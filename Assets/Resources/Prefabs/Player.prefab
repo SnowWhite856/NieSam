@@ -47,6 +47,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b25471d3295b641a933ee6496f4741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+=======
+  dmg: 0
+  ap: 0
+  hp: 0
+  armor: 0
+  movmentSpeed: 0
+  playerClass: 0
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
 --- !u!114 &6603722323574972131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,6 +68,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c0b91aaec99fb4da3662161d26455d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+=======
+  dmg: 0
+  ap: 0
+  hp: 0
+  armor: 0
+  movmentSpeed: 0
+  playerClass: 0
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
 --- !u!114 &5809453328689609420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,6 +89,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751a081db8c95db4b88ea3e5b7ee0f1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+=======
+  dmg: 0
+  ap: 0
+  hp: 0
+  armor: 0
+  movmentSpeed: 0
+  playerClass: 0
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
 --- !u!114 &4108707112721852764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +305,7 @@ MonoBehaviour:
   yRotation: 0
   movmentSpeed: 3
   playerClass: 0
+<<<<<<< HEAD
   walkSpeed: 7
   sprintSpeed: 12
   groundDrag: 5
@@ -293,6 +321,8 @@ MonoBehaviour:
   maxSlopeAngle: 0
   orientation: {fileID: 0}
   state: 0
+=======
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
 --- !u!114 &7362121378079301458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,8 +361,11 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
   hpUI: {fileID: 0}
   apUI: {fileID: 0}
+=======
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
 --- !u!114 &7438281954759935741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +383,10 @@ MonoBehaviour:
   hp: 0
   armor: 0
   movmentSpeed: 0
+<<<<<<< HEAD
   coins: 0
+=======
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
   playerClass: 3
 --- !u!95 &8766238096283747728
 Animator:
@@ -428,7 +464,10 @@ GameObject:
   - component: {fileID: 3316627187450438715}
   - component: {fileID: 2820596431187964928}
   - component: {fileID: 1843805109286530767}
+<<<<<<< HEAD
   - component: {fileID: 9172370541886156851}
+=======
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -510,6 +549,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8367813724710041838}
   m_Enabled: 1
+<<<<<<< HEAD
 --- !u!114 &9172370541886156851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,3 +565,5 @@ MonoBehaviour:
   sensX: 400
   sensY: 400
   orientation: {fileID: 4209134180684156306}
+=======
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41

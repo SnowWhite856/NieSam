@@ -17,7 +17,11 @@ public class TankClass : MonoBehaviour
         XmlNode playerArmor = xml.SelectSingleNode("Player/armor");
         XmlNode playerMS = xml.SelectSingleNode("Player/movmentSpeed");
 
+<<<<<<< HEAD
         playerDmg.InnerText = "8";
+=======
+        playerDmg.InnerText = "2";
+>>>>>>> 92c62add1b385d0616aabda80c3c470ef9c0ab41
         playerHp.InnerText = "150";
         playerAp.InnerText = "1";
         playerArmor.InnerText = "50";
