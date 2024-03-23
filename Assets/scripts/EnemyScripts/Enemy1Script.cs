@@ -16,25 +16,59 @@ public class Enemy1Script : MonoBehaviour
     private int movmentSpeed = 3;
     private bool reachDestination = true;
     private Vector3 randomPoint;
+    private bool isDead = false;
    // private bool isOnAttack = false;
 
     public allEnemyStatus enemyStatus;
 
     private void Start()
     {
-        enemyStatus = allEnemyStatus.Patroling;
+        FindFirstObjectByType<EnemyWaves>().enemysLeft++;
+        enemyStatus = allEnemyStatus.Chase;
         movmentSpeed = GetComponent<EnemyClass>().movmentSpeed;
         GetComponent<NavMeshAgent>().speed = movmentSpeed;
+        target = GameObject.Find("Player");
+        agent.SetDestination(target.transform.position);
     }
 
     public enum allEnemyStatus
     {
         Patroling,
         Chase,
-        Attack
+        Attack,
+        dead
     }
+
+    private bool canTakeDmg = true;
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Player" || enemyStatus == allEnemyStatus.dead || !canTakeDmg) return;
+        canTakeDmg = false;
+        WaponsClass takDmage = FindFirstObjectByType<EqScipt>().currentWapon;
+        gameObject.GetComponent<EnemyClass>().hp -= (takDmage.GetComponent<WaponsClass>().attackDmg + FindFirstObjectByType<PlayerStats>().dmg);
+
+        //do zrobienia
+        //Vector3 targetPosition = new Vector3(transform.position.x*-2, transform.position.y, transform.position.z*-2);
+        //gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,targetPosition,200f*Time.deltaTime);
+
+        //gameObject.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward * -50f);
+        //Debug.Log("enemy hit!");
+        StartCoroutine(waitDmg());
+    }
+
+    IEnumerator waitDmg()
+    {
+        yield return new WaitForSeconds(1);
+        canTakeDmg = true;
+    }
+
     void FixedUpdate()
     {
+        if(gameObject.GetComponent<EnemyClass>().hp <= 0)
+        {
+            enemyStatus = allEnemyStatus.dead;
+        }
+
         switch (enemyStatus)
         {
             case allEnemyStatus.Patroling:
@@ -48,13 +82,35 @@ public class Enemy1Script : MonoBehaviour
             case allEnemyStatus.Attack:
                 attack();
                 break;
+
+            case allEnemyStatus.dead:
+                dead();
+                break;
         }
+    }
+
+    void dead()
+    {
+        if(isDead) return;
+        gameObject.AddComponent<Rigidbody>();
+        gameObject.GetComponent<NavMeshAgent>().enabled = false;
+        FindFirstObjectByType<EnemyWaves>().enemysLeft -= 1;
+        isDead = true;
+        StartCoroutine(destoryObject());
+    }
+
+    IEnumerator destoryObject()
+    {
+        yield return new WaitForSeconds(5);
+        FindFirstObjectByType<PlayerStats>().coins++;
+        Destroy(gameObject);
     }
 
     //enemy patroling
     public float radius = 35.0f;
     void patroling()
     {
+        if(isDead) return;
         var currentX = target.transform.position.x;
         var currentZ = target.transform.position.z;
 
@@ -89,7 +145,7 @@ public class Enemy1Script : MonoBehaviour
     //enemy chaseing player
     private void chase()
     {
-        Debug.Log("player spot");
+        if (isDead) return;
         if (gameObject.tag == "Range") enemyStatus = allEnemyStatus.Attack;
 
         agent.SetDestination(target.transform.position);
@@ -97,22 +153,25 @@ public class Enemy1Script : MonoBehaviour
 
         float distance = Vector3.Distance(target.transform.position, transform.position);
 
+        /*
         if (distance >= lookRadius)
         {
             enemyStatus = allEnemyStatus.Patroling;
             IsEnemyKnow = false;
         }
+        */
     }
 
     //enemy attack
     private void attack()
     {
         if (!IsEnemyKnow) return;
+        if (isDead) return;
 
-        if (IsEnemyKnow)
-        {
             Quaternion rotation = Quaternion.LookRotation(target.transform.position - transform.position);
             transform.rotation = rotation;
+        if (IsEnemyKnow)
+        {
         }
 
         agent.SetDestination(agent.transform.position);
@@ -132,10 +191,12 @@ public class Enemy1Script : MonoBehaviour
                 break;
         }
 
+        /*
         if (distance >= lookRadius)
         {
             enemyStatus = allEnemyStatus.Patroling;
             IsEnemyKnow = false;
         }
+        */
     }
 }

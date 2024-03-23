@@ -20,22 +20,31 @@ public class PlayerMovment : MonoBehaviour
         //canMove = true;
     }
 
-    
+
     // Update is called once per frame
     void FixedUpdate()
     {
         if (!canMove) return;
+        movmentSpeed = FindFirstObjectByType<PlayerStats>().movmentSpeed;
         //Debug.Log(canMove);
         //var player = FindObjectOfType<PlayerMovment>();
         var direction = Vector3.zero;
 
         if (Input.GetKey(KeyCode.W))
         {
-            direction += gameObject.transform.forward * 20f;
+            direction += gameObject.transform.forward * 15f * movmentSpeed;
         }
-        else if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
-            direction += gameObject.transform.forward * -1f;
+            direction += gameObject.transform.forward * -15f * movmentSpeed;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            direction += gameObject.transform.right * -15f * movmentSpeed;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            direction += gameObject.transform.right * 15f * movmentSpeed;
         }
 
         xRotation += Input.GetAxis("Mouse X") * Time.deltaTime * 220f;

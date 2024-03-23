@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<waves>
+  <wave1>
+    <MeleEnemy>1</MeleEnemy>
+    <RangeEnemy>1</RangeEnemy>
+  </wave1>
+
+  <wave2>
+    <MeleEnemy>4</MeleEnemy>
+    <RangeEnemy>2</RangeEnemy>
+  </wave2>
+
+  <wave3>
+    <MeleEnemy>6</MeleEnemy>
+    <RangeEnemy>4</RangeEnemy>
+  </wave3>
+
+  <wave4>
+    <MeleEnemy>8</MeleEnemy>
+    <RangeEnemy>6</RangeEnemy>
+  </wave4>
+</waves>

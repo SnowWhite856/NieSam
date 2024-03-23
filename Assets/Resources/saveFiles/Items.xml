@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <sword id="1">
+    <attackDmg id="1">20</attackDmg>
+    <ablilityDmg id="1">0</ablilityDmg>
+    <atackSpeed id="1">1</atackSpeed>
+    <manaCost id="1">0</manaCost>
+    <rarity id="1">rare</rarity>
+    <name id="1">sword</name>
+    <stack id="1">False</stack>
+    <stackLimit id="1">0</stackLimit>
+    <Description id="1">Just awesome sword</Description>
+    <Id id="1">0</Id>
+  </sword>
+  <item1 id="2">
+    <name id="2">item1</name>
+    <stack id="2">True</stack>
+    <stackLimit id="2">5</stackLimit>
+    <Description id="2">Item1 description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce justo ipsum, porttitor et nisl in,</Description>
+    <Id id="2">1</Id>
+  </item1>
+  <item2 id="3">
+    <name id="3">item2</name>
+    <stack id="3">True</stack>
+    <stackLimit id="3">3</stackLimit>
+    <Description id="3">Item2 description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce justo ipsum, porttitor et nisl in,</Description>
+    <Id id="3">2</Id>
+  </item2>
+  <Spear id="4">
+    <attackDmg id="4">5</attackDmg>
+    <ablilityDmg id="4">0</ablilityDmg>
+    <atackSpeed id="4">0</atackSpeed>
+    <manaCost id="4">0</manaCost>
+    <rarity id="4">
+    </rarity>
+    <name id="4">Spear</name>
+    <stack id="4">False</stack>
+    <stackLimit id="4">0</stackLimit>
+    <Description id="4">Spear description </Description>
+    <Id id="4">3</Id>
+  </Spear>
+  <sword id="5">
+    <attackDmg id="5">15</attackDmg>
+    <ablilityDmg id="5">0</ablilityDmg>
+    <atackSpeed id="5">1</atackSpeed>
+    <manaCost id="5">0</manaCost>
+    <rarity id="5">uncommon</rarity>
+    <name id="5">sword</name>
+    <stack id="5">False</stack>
+    <stackLimit id="5">0</stackLimit>
+    <Description id="5">Just awesome sword</Description>
+    <Id id="5">0</Id>
+  </sword>
+</Items>

@@ -129,6 +129,7 @@ MonoBehaviour:
   stackLimit: 0
   Description: Just awesome sword
   spriteImage: {fileID: 0}
+  Id: 0
   attackDmg: 0
   ablilityDmg: 0
   atackSpeed: 0

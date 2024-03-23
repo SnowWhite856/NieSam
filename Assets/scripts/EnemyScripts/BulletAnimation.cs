@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,6 +7,7 @@ using UnityEngine;
 public class BulletAnimation : MonoBehaviour
 {
     public float speed = 15.0f;
+    public double dmg = 10;
 
     private void Start()
     {
@@ -23,6 +25,15 @@ public class BulletAnimation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("player hit!");
+        //FindFirstObjectByType<PlayerStats>().hp;
+        if (other.name != "Player") return;
+        dmg = FindFirstObjectByType<RangeEnemyClass>().damage;
+        double absorbDmg = FindFirstObjectByType<PlayerStats>().armor;
+
+        double currentHp = FindFirstObjectByType<PlayerStats>().hp;
+
+        Debug.Log("player hp: " + currentHp + " dmg taken: "+dmg+ " aborbe dmg:" +absorbDmg + " total dmg: "+ Math.Round(dmg - absorbDmg / 5));
+
+        FindFirstObjectByType<PlayerStats>().hp -= Math.Round(dmg - absorbDmg/5);
     }
 }

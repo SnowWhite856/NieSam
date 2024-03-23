@@ -17,7 +17,7 @@ public class MeleEnemyClass : EnemyClass
         Animator anim;
         anim = GetComponent<Animator>();
 
-        Debug.Log("attack");
+        //Debug.Log("attack");
         if (isOnAttack) return;
         isOnAttack = true;
         StartCoroutine(attackPlayerCd(anim));

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Collections;
 using UnityEngine;
@@ -20,6 +21,9 @@ public class EqScipt : MonoBehaviour
 
     public UnityEvent onValueChanged;
 
+    public TextMeshProUGUI hpUI;
+    public TextMeshProUGUI apUI;
+
     private int currentId;
     public enum allMainWapon
     {
@@ -29,17 +33,6 @@ public class EqScipt : MonoBehaviour
 
     public void addToEq(itemsClass newObject)
     {
-        //item.Add( newObject );
-
-        /*
-        //nadawanie przedmiotom id
-        currentId = 1;
-        foreach ( var item in item)
-        {
-            item.GetComponent<itemsClass>().Id = currentId;
-            currentId++;
-        }
-        */
         GetComponent<playerEq>().addItems();
         GetComponent<playerEq>().deleteUI();
     }
@@ -84,4 +77,26 @@ public class EqScipt : MonoBehaviour
         waponInEq2.name = wapon2;
     }
 
+    private void Update()
+    {
+        hpUI.text = FindFirstObjectByType<PlayerStats>().hp.ToString();
+        apUI.text = FindFirstObjectByType<PlayerStats>().ap.ToString();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            var waponSlot = GameObject.Find("WaponSlot");
+            try
+            {
+                waponSlot.GetComponentInChildren<BoxCollider>().enabled = true;
+            StartCoroutine(fire(waponSlot));
+            }
+            catch { }
+        }
     }
+
+    IEnumerator fire(GameObject waponSlot)
+    {
+        yield return new WaitForSeconds(1);
+        waponSlot.GetComponentInChildren<BoxCollider>().enabled = false;
+    }
+}

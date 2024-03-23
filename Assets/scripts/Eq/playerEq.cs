@@ -68,23 +68,6 @@ public class playerEq : MonoBehaviour
         allItems = 0;
         currentId = 0;
 
-        //niepytaj sam niewiem co tu siê dzieje
-        //z jakiegoœ powodu podczas zmiany zak³adanego przedmiotu
-        //tworzy pust¹ kopiê co tworzy problemy
-        //wiêc udwaj ¿e tego niema
-        //dzia³a? dzia³a. :D
-        itemsClass abc = item[0];
-        try
-        {
-            foreach(var test in item)
-            {
-                abc = test;
-                test.GetComponent<itemsClass>();
-            }
-        }
-        catch { item.Remove(abc); }
-        //
-
         foreach(var item in item)
         {
             item.GetComponent<itemsClass>().Id = currentId;

@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using TMPro;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Collections;
@@ -17,28 +19,14 @@ public class ShowItemBtn : MonoBehaviour
     public void OnButtonClick()
     {
         var item = FindFirstObjectByType<EqScipt>().item;
-        
-         foreach(var findItem in item)
-         {
-            if (findItem.Id == gameObject.GetComponent<itemsClass>().Id)
-            {
-                try
-                {
-                    itemRarity.text = findItem.GetComponent<WaponsClass>().rarity;
-                }
-                catch {}
-                
-                itemDescription.text = findItem.GetComponent<itemsClass>().Description;
-            }
-         }
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
+        try
         {
-            OnButtonClick();
+            itemRarity.text = gameObject.GetComponent<WaponsClass>().rarity;
         }
+        catch { }
+        itemDescription.text = gameObject.GetComponent<itemsClass>().Description;
+
+        FindFirstObjectByType<DropBtnScript>().toDelete = gameObject.GetComponent<itemsClass>().Id;
     }
 
     private void Awake()
